@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Home.css';
 import ModalCustom from './ModalCustom';
 import classNames from 'classnames';
+import rewardImg from './images/reward.png'
 
 const Home = () => {
   const [members, setMembers] = useState([]);
@@ -28,9 +29,9 @@ const Home = () => {
     setStartLotte(true)
     setTimeout(() => {
       handleRandom()
+      setOpenModal(true)
       setStartLotte(false)
     }, 3000)
-    setOpenModal(true)
   }
 
   const handleRandom = () => {
@@ -143,15 +144,21 @@ const Home = () => {
   return (
     <div className="Home d-flex flex-column position-relative">
       <ModalCustom isOpen={openModal}>
-        <div className="d-flex flex-wrap overflow-hidden">
+        <div className="d-flex flex-column align-items-center position-relative">
+          <img src={rewardImg} alt="reward" className='imgModalReward' />
+          <h4 className='my-3 title-modal'>{check > 3 ? check + 'th' : check === 3 ? check + 'rd' : check === 2 ? check + 'nd' : check + "st"} Rewards</h4>
+        <div className="d-flex flex-wrap overflow-hidden justify-content-center">
         {tempRes?.map((x, index) => (
           <div key={index} className="element-1 mx-2 my-2">
             {x}
           </div>
         ))}
         </div>
-        <button onClick={() => setOpenModal(false)}>Tat</button>
+        <button className='btn-modal' onClick={() => setOpenModal(false)}>OK</button>
+        </div>
       </ModalCustom>
+      <div className="lotteria-container d-flex flex-column position-relative align-items-center justify-content-end">
+        <h3 className='title-page'>Lotteria Random</h3>
       <div className="lotteria">
         <div className={classNames("circle-round-1", {'animate-circle-1' : startLotte})}></div>
         <div className={classNames("circle-round-2", {'animate-circle-2' : startLotte})}></div>
@@ -160,9 +167,10 @@ const Home = () => {
         <div className={classNames("circle-round-5", {'animate-circle-5' : startLotte})}></div>
       </div>
       
-      <button className='w-30' onClick={handleClickRandom}> Random </button>
-      <div className="d-flex flex-row flex-wrap justify-content-between">
-      <div className="container-reward justify-content-start d-flex flex-column px-4 my-4 ">
+      <button className='btn-random' onClick={handleClickRandom}> Random </button>
+      </div>
+      <div className="d-flex flex-row flex-wrap justify-content-between position-relative">
+      <div className="container-reward justify-content-start d-flex flex-column px-4 my-4 position-relative ">
         <h3>1ST</h3>
         <div className="d-flex flex-wrap">
         {firstRewards?.map((x, index) => (
@@ -173,7 +181,7 @@ const Home = () => {
         </div>
       </div>
       <div className="container-reward justify-content-start d-flex  flex-column px-4 my-4 ">
-        <h3>2ST</h3>
+        <h3>2nd</h3>
         <div className="d-flex flex-wrap">
         {secondRewards?.map((x, index) => (
           <div key={index} className="element-1 mx-2 my-2">
