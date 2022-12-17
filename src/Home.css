@@ -3,16 +3,43 @@
 }
 .container-reward {
   max-width: 100%;
-  height: 250px;
+  height: 50px;
   font-size: 13px;
-  width: 40%;
+  width: 250px;
   border-radius: 4px;
+  margin: 0 30px;
+  cursor: pointer;
+}
+/* .mot-reward {
+  margin-left: auto;
+  margin-right: auto;
+} */
+/* .hai-reward {
+  height: 100px;
+  margin: 0 100px;
+}
+.ba-reward {
+  height: 200px;
+  margin: 0 100px;
+}
+.bon-reward {
+  height: 200px;
+}
+.nam-reward {
+  height: 150px;
+} */
+.phu-reward {
+  width: 100%;
+}
+.rewards {
+  margin-left: 50px;
+  padding: 100px 150px;
 }
 .container-reward:nth-child(odd) {
-  border: 1px solid rgb(23, 235, 83);
+  border: 3px solid rgb(23, 235, 83);
 }
 .container-reward:nth-child(even) {
-  border: 1px solid rgb(250, 35, 89);
+  border: 3px solid rgb(250, 35, 89);
 }
 .container-reward > div {
   height: calc(100% - 30px);
@@ -24,15 +51,6 @@
   object-fit: cover;
   width: 80px;
   height: 80px;
-}
-.title-page {
-  position: absolute;
-  top: 30px;
-  background: linear-gradient(90deg, #2680eb 0%, #d511e3 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 45px;
 }
 
 .title-modal {
@@ -49,18 +67,28 @@ background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+
   border-radius: 8px;
 }
 
-.lotteria-container {
-  height: 500px;
+.element-1 {
+  font-size: 18px;
 }
-
+.lotteria-container {
+  padding-top: 150px;
+  height: 100vh;
+}
+.title-page {
+  background: linear-gradient(90deg, #2680eb 0%, #d511e3 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 45px;
+}
 .lotteria{
   width:330px;
   height:330px;
-  border:1px solid rgb(18, 222, 157);
-  position:absolute;
-  top:100px; left:0;right:0;
-  margin:auto;
-  border-radius:50%; 
+  border:3px solid rgb(18, 222, 157);
+  position:relative;
+  border-radius:50%;
+  margin: 50px 0;
+  box-shadow: 0 3px 10px #29ffc6;
 }
 .btn-random {
   background: #74ebd5;  /* fallback for old browsers */
@@ -74,6 +102,27 @@ background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+
   font-weight: bold;
   border-radius: 8px;
 }
+
+.img-bg {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.img-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.body-container {
+  padding: 150px 50px 150px 150px;
+}
+
+
+
+
 
 .circle-round-1, .circle-round-2, .circle-round-3, .circle-round-4, .circle-round-5{
   width:30px;
@@ -106,6 +155,10 @@ background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+
   top:0; bottom:0; right:70px;
 }
 
+
+
+
+
 .animate-circle-1 {
   animation: circle 3s linear infinite;
 }
@@ -121,6 +174,11 @@ background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+
 .animate-circle-5 {
   animation: circle5 3s linear infinite;
 }
+
+
+
+
+
 @keyframes circle{
   0%{
     transform:rotate(0deg)
